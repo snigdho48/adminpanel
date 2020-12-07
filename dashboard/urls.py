@@ -32,7 +32,8 @@ urlpatterns = [
     url(r'^register/',views.register,name="register"),
     url(r'^password/',views.password,name="password"),
     url(r'^light/',views.layout,name="layout"),
-    url(r'^',views.base,name="base"),
+    url(r'^base/',views.base,name="base"),
+    url(r'^',views.index,name="index"),
 
 
 

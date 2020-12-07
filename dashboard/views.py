@@ -31,6 +31,9 @@ def e500(request):
 
 def e401(request):
     return render(request,'401.html')
-
+    
 def e404(request):
     return render(request,'404.html')
+
+def index(request):
+    return render(request,'index.html')

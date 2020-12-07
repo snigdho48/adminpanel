@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Tables - SB Admin</title>
+        {% include "css.html" %}
+    </head>
+    <body class="sb-nav-fixed">
+
+
+      {% include "base.html" %}
+
+
+
+
+      {% block content %}
+
+      {% endblock %}
+      {% include "footer.html" %}
+
+    {% include "js.html" %}
+    {% block all %}
+
+    {% endblock %}
+</body>
+</html>
