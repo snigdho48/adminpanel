@@ -19,6 +19,7 @@ from django.conf.urls import url
 from .import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -34,6 +35,9 @@ urlpatterns = [
     url(r'^light/',views.layout,name="layout"),
     url(r'^base/',views.base,name="base"),
     url(r'^',views.index,name="index"),
+    url('^accounts/', include('django.contrib.auth.urls')),
+
+
 
 
 

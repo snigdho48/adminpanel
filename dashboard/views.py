@@ -74,7 +74,7 @@ def login(request):
 
             auth.login(request,user)
             messages.info(request,'Signin successfully.')
-            return redirect('/')
+            return redirect('/',)
 
         else:
             messages.info(request,'incorrect password.')

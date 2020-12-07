@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import os.path
 from django.core.wsgi import get_wsgi_application
+import django.core.mail 
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -44,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'adminpanel',
-    
+
 ]
 AUTHENTICATION_BACKENDS = [
      'django.contrib.auth.backends.ModelBackend'
@@ -136,3 +138,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_YLS = True
+EMAIL_HOST_USER = 'furioussnigdho@gmail.com'
+EMAIL_HOST_PASSWORD = '22292646s'
