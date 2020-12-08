@@ -2,9 +2,22 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth import authenticate
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordResetView
+from django.views.generic.edit import FormView
+from django.views.generic.base import TemplateView
+
+
+
 
 
 # Create your views here.
+
+
+
+
+
+
 
 
 def register(request):
@@ -74,7 +87,7 @@ def login(request):
 
             auth.login(request,user)
             messages.info(request,'Signin successfully.')
-            return redirect('/',)
+            return redirect('index')
 
         else:
             messages.info(request,'incorrect password.')
@@ -93,7 +106,7 @@ def login(request):
 def logout(request):
 
     auth.logout(request)
-    return redirect('login')
+    return render(request,'login.html')
 
 
 def layout(request):
@@ -102,8 +115,7 @@ def layout(request):
 def base(request):
     return render(request,'base.html')
 
-def password(request):
-    return render(request,'password.html')
+
 
 def tables(request):
     return render(request,'tables.html')

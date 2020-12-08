@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import os.path
 from django.core.wsgi import get_wsgi_application
-import django.core.mail 
+import django.core.mail
 
 
 
@@ -142,6 +142,6 @@ MEDIA_URL = '/media/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USE_YLS = True
+EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'furioussnigdho@gmail.com'
-EMAIL_HOST_PASSWORD = '22292646s'
+EMAIL_HOST_PASSWORD = ''

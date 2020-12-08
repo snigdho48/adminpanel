@@ -23,6 +23,7 @@ from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
+    url(r'^index/',views.index,name="index"),
     url(r'^tables/',views.tables,name="tables"),
     url(r'^charts/',views.charts,name="charts"),
     url(r'^cards/',views.cards,name="cards"),
@@ -31,11 +32,26 @@ urlpatterns = [
     url(r'^401/',views.e401,name="e401"),
     url(r'^login/',views.login,name="login"),
     url(r'^register/',views.register,name="register"),
-    url(r'^password/',views.password,name="password"),
     url(r'^light/',views.layout,name="layout"),
     url(r'^base/',views.base,name="base"),
-    url(r'^',views.index,name="index"),
-    url('^accounts/', include('django.contrib.auth.urls')),
+
+    url(r'^logout/',views.logout,name="logout"),
+    path('password_reset_form/',
+    auth_views.PasswordResetView.as_view(),
+    name='password_reset_form'),
+
+    path('password_reset/done/',
+    auth_views.PasswordResetDoneView.as_view(),
+    name='password_reset_done'),
+
+    path('reset/<uidb64>/<token>/',
+    auth_views.PasswordResetConfirmView.as_view(),
+    name='password_reset_confirm'),
+
+    path('reset/done/',
+    auth_views.PasswordResetCompleteView.as_view(),
+    name='password_reset_complete'),
+
 
 
 
