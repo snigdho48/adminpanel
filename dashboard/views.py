@@ -86,7 +86,6 @@ def login(request):
         if user is not None:
 
             auth.login(request,user)
-            messages.info(request,'Signin successfully.')
             return redirect('index')
 
         else:
@@ -106,7 +105,7 @@ def login(request):
 def logout(request):
 
     auth.logout(request)
-    return render(request,'login.html')
+    return redirect('login')
 
 
 def layout(request):
