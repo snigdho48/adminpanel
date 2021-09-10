@@ -5,5 +5,5 @@ Django==2.2.7
 filelock==3.0.12
 pytz==2020.4
 six==1.15.0
-sqlparse==0.4.1
+sqlparse==0.4.2
 virtualenv==20.2.1
